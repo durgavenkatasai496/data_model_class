@@ -1,5 +1,7 @@
 package com.example.dataclasspractice.modelclass
 
+import com.google.gson.Gson
+
 /**
  * ✅ What is a Data Class in Kotlin?
  *
@@ -27,6 +29,11 @@ data class UserData(val name: String, val age: Int, val mobileNumber: Int)
 
 fun main(){
 
+    gsonChecking()
+
+}
+
+fun modelClassPractice(){
     var namesAdd = UserData(name = "ONE", age = 22, mobileNumber = 99)
     var namesAdd1 = UserData(name = "TWO", age = 21, mobileNumber = 99)
 
@@ -46,6 +53,35 @@ fun main(){
     //Component
     println(namesAdd1.component1())
 
+}
 
+/*
+ * ✅ What is Gson?
+Gson is a library provided by Google.
+
+It helps you convert between Kotlin/Java objects and JSON format.
+
+JSON (JavaScript Object Notation) is a common data format used to send and receive data (especially in APIs).
+*
+*
+* ✅ What is toJson()?
+It converts a Kotlin object into a JSON string.
+*
+* ✅ What is fromJson()?
+It does the opposite of toJson().
+
+It converts a JSON string back into a Kotlin object.
+*
+ */
+fun gsonChecking(){
+
+    val gson = Gson()
+
+    var json : String = gson.toJson(UserData(name = "ONE", age = 22, mobileNumber = 99))
+
+    println(json)
+
+    val user : UserData = gson.fromJson(json, UserData::class.java)
+    println(user)
 
 }

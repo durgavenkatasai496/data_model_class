@@ -5,11 +5,11 @@ import com.google.gson.Gson
 /**
  * ✅ What is a Data Class in Kotlin?
  *
- * A `data class` is a special type of class in Kotlin designed to hold and manage data.
+ * A data class is a special type of class in Kotlin designed to hold and manage data.
  * It automatically generates commonly used functions such as:
- *   - toString()     → for a readable string representation
- *   - equals()       → for content-based equality checks
- *   - hashCode()     → for usage in hash-based collections
+ *   - toString()     → Gives a readable string output of the object
+ *   - equals()       → Checks if two objects have same content
+ *   - hashCode()     → Returns a hash code based on content
  *   - copy()         → to create copies with modified values
  *   - componentN()   → to support destructuring declarations or Each Property
  *
@@ -47,7 +47,7 @@ fun modelClassPractice(){
     println(namesAdd.hashCode())
 
     //Copy
-    val updatedUser = namesAdd.copy(name = "UpdatedName")
+    val updatedUser =  namesAdd.copy(name = "UpdatedName")
     println(updatedUser)
 
     //Component
@@ -57,22 +57,19 @@ fun modelClassPractice(){
 
 /*
  * ✅ What is Gson?
-Gson is a library provided by Google.
-
-It helps you convert between Kotlin/Java objects and JSON format.
-
-JSON (JavaScript Object Notation) is a common data format used to send and receive data (especially in APIs).
-*
-*
-* ✅ What is toJson()?
-It converts a Kotlin object into a JSON string.
-*
-* ✅ What is fromJson()?
-It does the opposite of toJson().
-
-It converts a JSON string back into a Kotlin object.
-*
+ * Gson is a JSON library provided by Google.
+ * It allows conversion between Kotlin/Java objects and JSON format.
+ * JSON (JavaScript Object Notation) is a lightweight data format commonly used for transmitting data in web APIs.
+ *
+ * ✅ What is toJson()?
+ * The toJson() function is used to serialize a Kotlin/Java object into a JSON-formatted string.
+ * This is useful when sending data to a server or storing it locally in a readable format.
+ *
+ * ✅ What is fromJson()?
+ * The fromJson() function is used to deserialize a JSON string back into a Kotlin/Java object.
+ * This is helpful when you receive JSON data (e.g., from an API) and want to work with it as a typed object.
  */
+
 fun gsonChecking(){
 
     val gson = Gson()

@@ -26,6 +26,10 @@ import com.google.gson.Gson
  */
 data class UserData(val name: String, val age: Int, val mobileNumber: Int)
 
+/*
+ * Why Use The Data Class :
+ * Using data saves time and reduces code when you're just storing and passing data.
+ */
 
 fun main(){
 
